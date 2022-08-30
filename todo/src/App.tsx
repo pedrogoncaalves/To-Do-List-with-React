@@ -11,8 +11,8 @@ import { AddArea } from "./components/AddArea";
 // Criando lista de tarefas através do useState do React Hooks
 const App =  () => {
   const [list, setList] = useState<Item[]>([
-    {id: 1, name: 'Comprar o Pão na Padaria', done: false},
-    {id: 2, name: 'Comprar o Bolo na Padaria', done: true}
+    {id: 1, name: 'Comprar produtos de limpeza', done: false},
+    {id: 2, name: 'Comprar pão na padaria', done: false}
   ]);
 
   const handleAddTask = (taskName: string) => {
@@ -27,20 +27,11 @@ const App =  () => {
 
   }
 
-
-
   return (
     <C.Container>
       <C.Area> 
         <C.Header>Lista de Tarefas</C.Header>
-
-
         <AddArea onEnter={handleAddTask}/>
-
-
-
-
-
         {list.map((item, index) => (
           <ListItem key={index} item={item}/>
         ))}
@@ -48,11 +39,7 @@ const App =  () => {
       </C.Area>
     </C.Container>
 
-
   )
-
 }
-
-
 
 export default App;
